@@ -98,7 +98,6 @@ namespace Calculator
                 case 46:
                     Decimal_Click(Decimal, new EventArgs());
                     break;
-
             }
         }
         private void Zero_Click(object sender, EventArgs e)
@@ -143,7 +142,7 @@ namespace Calculator
         }
         private void XSquaredOfY_Click(object sender, EventArgs e)
         {
-            if (StartEntry == true)
+            if (StartEntry == true)// clears the history if there was a previous entry
             {
                 Results.Text = "";
                 StartEntry = false;
@@ -164,7 +163,7 @@ namespace Calculator
                 StartEntry = false;
             }
             Results.Text += Input.Text + "+";
-            if (Input.Text != "")
+            if (Input.Text != "")//if input is not empty
             {
                 numbers[count] = double.Parse(Input.Text);
             }
@@ -174,13 +173,13 @@ namespace Calculator
         }
         private void Subtract_Click(object sender, EventArgs e)
         {
-            if (StartEntry == true)
+            if (StartEntry == true)// this clears the history if there was a previous entry
             {
                 Results.Text = "";
                 StartEntry = false;
             }
             Results.Text += Input.Text + "-";
-            if (Input.Text != "")
+            if (Input.Text != "")//if input is not empty
             {
                 numbers[count] = double.Parse(Input.Text);
             } 
@@ -190,17 +189,15 @@ namespace Calculator
         }
         private void mulitiply_Click(object sender, EventArgs e)
         {
-            if (StartEntry == true)
+            if (StartEntry == true)// this clears the history if there was a previous entry
             {
                 Results.Text = "";
                 StartEntry = false;
             }
             Results.Text += Input.Text + "X";
-            if (Input.Text != "")
+            if (Input.Text != "")//if input is not empty
             {
-                
                 numbers[count] = double.Parse(Input.Text);
-
             } 
             count++;
             math[count] = "X";
@@ -212,13 +209,13 @@ namespace Calculator
         }
         private void Divided_Click(object sender, EventArgs e)
         {
-            if (StartEntry == true)
+            if (StartEntry == true) // this clears the history if there was a previous entry
             {
                 Results.Text = "";
                 StartEntry = false;
             }
             Results.Text += Input.Text + "/";
-            if (Input.Text != "")
+            if (Input.Text != "") //if input is not empty
             {
                 numbers[count] = double.Parse(Input.Text);
                 
@@ -229,7 +226,7 @@ namespace Calculator
         }
         private void XSquared_Click(object sender, EventArgs e)
         {
-            if (StartEntry == true)
+            if (StartEntry == true)// this clears the history if there was a previous entry
             {
                 Results.Text = "";
                 StartEntry = false;
@@ -242,21 +239,22 @@ namespace Calculator
         }
         private void OneOverX_Click(object sender, EventArgs e)
         {
-            if (StartEntry == true)
+            if (StartEntry == true)// this clears the history if there was a previous entry
             {
                 Results.Text = "";
                 StartEntry = false;
             }
             Results.Text += 1 + "/" + Input.Text;
-            string temp = 1 + "/" + Input.Text;
-            double temps = double.Parse(Input.Text);
-            numbers[count] = temps;
+            numbers[count] = 1;
+            count++;
+            math[count] = "/";
+            numbers[count] = double.Parse(Input.Text);
             count++;
             Input.Text = "";
         }
         private void PostiveNegative_Click(object sender, EventArgs e)
         {
-            if (StartEntry == true)
+            if (StartEntry == true)// this clears the history if there was a previous entry
             {
                 Results.Text = "";
                 StartEntry = false;
@@ -270,7 +268,7 @@ namespace Calculator
         }
         private void Sqrt_Click(object sender, EventArgs e)
         {
-            if (StartEntry == true)
+            if (StartEntry == true)// this clears the history if there was a previous entry
             {
                 Results.Text = "";
                 StartEntry = false;
@@ -288,7 +286,7 @@ namespace Calculator
             int ready = 0;
             int ready2 = 0;
             int x = 0;
-            if (Input.Text != "")
+            if (Input.Text != "")//if input is not empty
             {
                 numbers[count] = double.Parse(Input.Text);
             }
@@ -304,7 +302,7 @@ namespace Calculator
                         break;
                     }
                 }
-                if (math[num] == "^")
+                if (math[num] == "^")//^2 
                 {
                     // do the math, then check if there is anymore
                     double base1 = numbers[num - 1];
